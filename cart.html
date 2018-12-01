@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车</title>
+	<!-- 通用样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/base.css"/>
+	<!-- 引入layui样式 -->
+	<link rel="stylesheet" href="./static/css/layui.css"/>
+	<link rel="stylesheet" href="./css/cart.css"/>
+
+</head>
+<body>
+	<!-- 头部导航 -->
+
+	<div class="headernav">
+		<div class="w1200">
+		<ul class="layui-nav" lay-filter="">
+
+			<li class=" layui-nav-item  logo-icon"><img src="./image/logo-4.png"></li>
+			  <li class="layui-nav-item"><a href="./index.html">首页</a></li>
+			  <li class="layui-nav-item  layui-this"><a href="./cart.html">购物车</a></li>
+			  <li class="layui-nav-item"><a href="./detail.html">书籍详情</a></li>
+			<!--   <li class="layui-nav-item"><a href="./admin/bookAdd.html">图书上架</a></li> -->
+			 
+			  <li class="layui-nav-item">
+			    <a href="javascript:;">个人中心</a>
+			    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+			      <dd><a href="./admin/user.php">个人资料</a></dd>
+			      <dd><a href="">购物记录</a></dd>
+			      <dd><a href="./admin/list.php">图书管理</a></dd>
+
+			      <dd><a href="./exit.html">退出登录</a></dd>
+			    </dl>
+			  </li>
+		</ul>
+
+
+		</div>
+		
+	</div>
+
+
+	<div class="container">
+		<div class='wrap w1200'>
+			<div class="layui-elem-quote">
+				<p>购物车</p>
+			</div>
+			<div class="contable">
+				<table class="layui-table tab">
+				 <colgroup>
+				 	<col width="60">
+				 	<col width="200">
+				 	<col width="120">
+				 	<col width="200">
+				 	<col width="80">
+				 	<col width="300">
+				 	<col width="120">
+				 	<col width="80">
+				 </colgroup>
+				  <thead>
+					    <tr class="tabTr">
+					      <th>序号</th>
+					      <th>书名</th>
+					      <th>作者</th>
+					      <th>出版社</th>
+					      <th>售价</th>
+					      <th>数量</th>
+					      <th>支付</th>
+					      <th>删除</th>
+					    </tr> 
+				  </thead>
+				  <tbody>
+					    <tr>
+					      <td>0</td>
+					      <td>罗门生</td>
+					      <td>詹姆斯•邦德</td>
+					      <td>出版社</td>
+					      <td>￥100</td>
+					      <td>
+							
+								  <button class="layui-btn layui-btn-primary layui-btn-sm">
+								    <i class="layui-icon">&#xe603;</i>
+								  </button>
+								   <div class="layui-input-inline">
+								  	 <input type="text" name="" autocomplete="off" class="layui-input numinput" value='1'>
+								    </div>
+								  <button class="layui-btn layui-btn-primary layui-btn-sm">
+								    <i class="layui-icon">&#xe602;</i>
+								  </button>
+								
+								 
+								
+					      </td>
+					      <td>立即支付</td>
+					      <td>
+								<button class="layui-btn">删除</button>
+					      </td>
+					    </tr>
+					    
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- 底部 -->
+
+	<div class="foot w1200">
+		<hr/>
+		<ul class="footul">
+			<li class=''>关于我们</li>
+			<li class=''>联系我们</li>
+
+		</ul>
+	</div>
+	
+</body>
+	<script src="static/layui.js"></script>
+	<script type="text/javascript">
+	//头部滑动
+	layui.use('element', function(){
+		  var element = layui.element;
+		  
+		  //…
+		});
+	</script>
+</html>

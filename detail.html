@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<!-- 通用样式 -->
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<!-- 引入layui样式 -->
+	<link rel="stylesheet" href="./static/css/layui.css">
+	<link rel="stylesheet" href="./css/detail.css">
+
+</head>
+<body>
+<div class="headernav">
+		<div class="w1200">
+		<ul class="layui-nav" lay-filter="">
+
+			<li class=" layui-nav-item  logo-icon"><img src="./image/logo-4.png"></li>
+			  <li class="layui-nav-item"><a href="./index.html">首页</a></li>
+			  <li class="layui-nav-item "><a href="./cart.html">购物车</a></li>
+			  <li class="layui-nav-item layui-this"><a href="./detail.html">书籍详情</a></li>
+			<!--   <li class="layui-nav-item "><a href="./admin/bookAdd.html">图书上架</a></li> -->
+			 
+			  <li class="layui-nav-item">
+			    <a href="javascript:;">个人中心</a>
+			    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+			      <dd><a href="./admin/user.php">个人资料</a></dd>
+			      <dd><a href="">购物记录</a></dd>
+			      <dd><a href="">退出登录</a></dd>
+			    </dl>
+			  </li>
+		</ul>
+
+		</div>
+		
+	</div>
+	
+
+			<div class="container">
+					<div class="d-head w1200">
+						<div class="layui-elem-quote">
+							<p>书籍详情</p>
+						</div>
+						<div class="d-list">
+							<div class="listlogo">
+								<img class="ophoto" src="" alt=""/>
+							</div>
+							<table class="layui-table">
+								  <colgroup>
+								    <col width="300">
+								    <col width="800">
+								  </colgroup>
+								  <tbody>
+								  <tr>
+										<td>序号</td>
+										<td class="id"></td>
+									</tr>
+									<tr>
+										<td>书名</td>
+										<td class="bookname"></td>
+									</tr>
+									<tr>
+										<td>作者</td>
+										<td class="author"></td>
+									</tr>
+									<tr>
+										<td>出版社</td>
+										<td class="public"></td>
+									</tr>
+									<tr>
+										<td>图书售价</td>
+										<td class="price"></td>
+									</tr>
+									
+									<tr>
+										<td>内容概要</td>
+										<td class="desc"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<button class="layui-btn">立即购买</button>
+											<button class="layui-btn layui-btn-primary">加入购物车</button>
+										</td>
+									</tr>
+								
+								  
+								  </tbody>
+								</table>
+						</div>
+					</div>
+					
+				
+
+			</div>
+
+	
+	<!-- 底部 -->
+	<div class="foot w1200">
+		<hr/>
+		<ul class="footul">
+			<li class=''>关于我们</li>
+			<li class=''>联系我们</li>
+
+		</ul>
+	</div>
+
+
+</body>
+	<script src="static/layui.js"></script>
+	<script src="./js/jquery-1.10.2.min.js"></script>
+
+ 
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+
+$(function(){
+
+	var urlinfo = window.location.href;
+	var urlid=urlinfo.split('?')[1].split('=')[1];
+	console.log(urlid);
+	
+	$.get('detail.php?id='+urlid,function(data,status){
+		console.log(data);
+		var photo = data.photo;
+		var id=data.id;
+		var name=data.bookname;
+		var author=data.author;
+		var public=data.public;
+		var price=data.price;
+		var description=data.description;
+
+
+		//把数据渲染到页面
+		$(".id").html(id);
+		$(".ophoto").attr('src',photo);
+		$(".bookname").html(name);
+		$(".author").html(author);
+		$(".public").html(public);
+		$(".price").html(price);
+		$(".desc").html(description);
+
+
+		
+
+
+	},'json')
+})
+
+
+
+</script>
+</html>

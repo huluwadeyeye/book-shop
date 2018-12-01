@@ -1,0 +1,15 @@
+@charset "UTF-8";
+.tab{
+	text-align: center;
+}
+.tabTr>th{
+	text-align: center;
+
+}
+.layui-input-inline>.numinput{
+	/*float: left;*/
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	 margin: 0 10px;
+}
